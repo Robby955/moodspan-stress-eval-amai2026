@@ -1,0 +1,54 @@
+{
+  "version": "2026-06-02.hybrid-quarantine",
+  "publicArticleCorpus": {
+    "status": "absent",
+    "contentDir": "content",
+    "publicIndexing": "disabled",
+    "sitemapExposure": "none",
+    "articleCount": 0,
+    "note": "The current checkout has zero tracked public article files. Historical article counts are planning or evaluation metadata, not shipped corpus evidence."
+  },
+  "retrievalQuarantine": {
+    "enabled": true,
+    "exposure": "retrieval_only",
+    "publicIndexing": "excluded",
+    "sourceArtifacts": [
+      "data/eval/results/response-quality-latest.json"
+    ],
+    "sourceType": "preserved_response_quality_retrieval_sources",
+    "reviewStatus": "not_clinician_reviewed",
+    "promotionPolicy": "Do not promote quarantined retrieval sources to public indexed content without a source and review checklist."
+  },
+  "approvedPath": {
+    "strategy": "hybrid_quarantine",
+    "publicLabel": "curated set of N articles",
+    "steps": [
+      "keep high-traffic and clinically cited articles when provenance is available",
+      "regenerate medium-quality pages only from source-strict inputs",
+      "retire low-traffic stubs with redirects or noindex handling",
+      "keep unreviewed material retrieval-only until it clears review"
+    ]
+  },
+  "sourceQualityCriteria": {
+    "version": "2026-06-04.quality-first",
+    "specPath": "docs/corpus/source-quality-criteria-2026-06-04.md",
+    "successMetric": "Kira returns grounded answers a clinician reviewer would respect; raw article count is supporting metadata only.",
+    "requiredGate": "Before promotion, the 100-query stress test must keep strict unsupported at 0/100, broad relevance at 0/100, grounding at least 4.5, and completeness at least the empty-corpus baseline."
+  },
+  "latestRestorationDryRun": {
+    "artifactDir": "data/corpus-restoration",
+    "acceptedReviewCandidates": 4,
+    "rejectedCandidates": 6,
+    "publicPromotion": false,
+    "localCandidateEval": {
+      "artifact": "data/eval/results/response-quality-2026-06-04T15-16-57-386Z.json",
+      "strictUnsupported": "0/100",
+      "broadRelevance": "0/100",
+      "groundingMean": 4.81,
+      "completenessMean": 3.17,
+      "baselineCompletenessMean": 3.24,
+      "verdict": "rolled_back",
+      "reason": "Completeness decreased versus the empty-corpus baseline."
+    }
+  }
+}

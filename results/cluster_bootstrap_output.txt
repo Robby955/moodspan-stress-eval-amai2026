@@ -1,0 +1,164 @@
+==============================================================================
+CLUSTER BOOTSTRAP -- AMAI 2026 stress split
+==============================================================================
+artifact          : data/judge_scores.json (this archive)
+artifact timestamp: 2026-06-03T21:25:19.593Z
+system under test : llama-3.3-70b-versatile via groq (temperature 0.3)
+judge             : llama-3.3-70b-versatile via groq (temperature 0.1)
+queries           : 100
+categories        : 20  sizes [5]
+seed              : 20260806   replicates: 10000 (deployment bootstrap uses 2000)
+
+stored aggregate intervals (the paper's Table 1 i.i.d. column):
+  completeness       mean 3.24  95% CI [3.04, 3.43]
+  grounding          mean 4.78  95% CI [4.68, 4.87]
+  correctness        mean 4.05  95% CI [3.89, 4.21]
+  safety_compliance  mean 4.60  95% CI [4.48, 4.72]
+  hallucination rate 0.00   constitutional pass rate 0.97
+
+------------------------------------------------------------------------------
+PART 1  Score distributions (verification of the published counts)
+------------------------------------------------------------------------------
+completeness       1/5:  6  2/5: 12  3/5: 43  4/5: 30  5/5:  9   mean 3.24  median 3.0  mode 3/5  unimodal
+grounding          1/5:  0  2/5:  1  3/5:  0  4/5: 19  5/5: 80   mean 4.78  median 5.0  mode 5/5  NOT unimodal
+correctness        1/5:  1  2/5:  6  3/5:  8  4/5: 57  5/5: 28   mean 4.05  median 4.0  mode 4/5  unimodal
+safety_compliance  1/5:  0  2/5:  1  3/5:  5  4/5: 27  5/5: 67   mean 4.60  median 5.0  mode 5/5  unimodal
+
+completeness detail: 1/5 n=6, 2/5 n=12, 3/5 n=43, 4/5 n=30, 5/5 n=9
+  mass at the modal score 3/5 and its neighbours (2-4): 85/100
+  mass at or below 2/5: 18/100 ; at or above 4/5: 39/100
+  first differences of the histogram (2-1, 3-2, 4-3, 5-4): +6, +31, -13, -21
+  sign changes in the first differences: 1  (a second mode needs at least two)
+
+------------------------------------------------------------------------------
+PART 2  Intraclass correlation and design effect (m=5 per category)
+------------------------------------------------------------------------------
+completeness       MS_between  0.813  MS_within  1.010  ICC(1) -0.041  design effect 0.837  effective n 119.4
+grounding          MS_between  0.251  MS_within  0.230  ICC(1) +0.018  design effect 1.070  effective n  93.4
+correctness        MS_between  0.545  MS_within  0.730  ICC(1) -0.053  design effect 0.786  effective n 127.2
+safety_compliance  MS_between  0.421  MS_within  0.400  ICC(1) +0.010  design effect 1.042  effective n  96.0
+
+------------------------------------------------------------------------------
+PART 3  Confidence intervals, four methods
+------------------------------------------------------------------------------
+A = i.i.d. percentile bootstrap over 100 queries, 2000 draws (the deployment's own method and default)
+B = i.i.d. percentile bootstrap over 100 queries, 10000 draws
+C = cluster percentile bootstrap, 20 categories resampled whole, 10000 draws
+D = cluster percentile bootstrap, two-stage (categories then queries), 10000 draws
+E = analytic cluster-robust t interval on the 20 category means, df=19
+
+[completeness]  mean 3.24   naive SE 0.0986   cluster SE 0.0901   SE ratio 0.914
+    A deployment        [ 3.04,  3.42]  width 0.380
+    B iid   10000     [ 3.05,  3.43]  width 0.380
+    C cluster whole    [ 3.08,  3.42]  width 0.340
+    D cluster 2-stage  [ 3.00,  3.48]  width 0.480
+    E cluster t df=19  [ 3.05,  3.43]  width 0.377
+    width ratio vs published: cluster 0.89x, cluster-t 0.99x
+
+[grounding]  mean 4.78   naive SE 0.0484   cluster SE 0.0501   SE ratio 1.035
+    A deployment        [ 4.68,  4.87]  width 0.190
+    B iid   10000     [ 4.68,  4.87]  width 0.190
+    C cluster whole    [ 4.68,  4.87]  width 0.190
+    D cluster 2-stage  [ 4.64,  4.89]  width 0.250
+    E cluster t df=19  [ 4.68,  4.88]  width 0.210
+    width ratio vs published: cluster 1.00x, cluster-t 1.10x
+
+[correctness]  mean 4.05   naive SE 0.0833   cluster SE 0.0738   SE ratio 0.886
+    A deployment        [ 3.89,  4.20]  width 0.310
+    B iid   10000     [ 3.88,  4.21]  width 0.330
+    C cluster whole    [ 3.90,  4.18]  width 0.280
+    D cluster 2-stage  [ 3.84,  4.24]  width 0.400
+    E cluster t df=19  [ 3.90,  4.20]  width 0.309
+    width ratio vs published: cluster 0.90x, cluster-t 1.00x
+
+[safety_compliance]  mean 4.60   naive SE 0.0636   cluster SE 0.0649   SE ratio 1.021
+    A deployment        [ 4.47,  4.72]  width 0.250
+    B iid   10000     [ 4.47,  4.72]  width 0.250
+    C cluster whole    [ 4.47,  4.72]  width 0.250
+    D cluster 2-stage  [ 4.42,  4.75]  width 0.330
+    E cluster t df=19  [ 4.46,  4.74]  width 0.272
+    width ratio vs published: cluster 1.00x, cluster-t 1.09x
+
+------------------------------------------------------------------------------
+PART 4  Contract verdicts against the 4.00 floor under every method
+------------------------------------------------------------------------------
+completeness clause: reject if the whole interval lies below 4.00
+grounding clause   : pass if the whole interval lies above 4.00
+
+completeness       A deployment       [ 3.04,  3.42]  entirely BELOW 4.00
+completeness       B iid long         [ 3.05,  3.43]  entirely BELOW 4.00
+completeness       C cluster          [ 3.08,  3.42]  entirely BELOW 4.00
+completeness       D cluster 2-stage  [ 3.00,  3.48]  entirely BELOW 4.00
+completeness       E cluster t        [ 3.05,  3.43]  entirely BELOW 4.00
+
+grounding          A deployment       [ 4.68,  4.87]  entirely ABOVE 4.00
+grounding          B iid long         [ 4.68,  4.87]  entirely ABOVE 4.00
+grounding          C cluster          [ 4.68,  4.87]  entirely ABOVE 4.00
+grounding          D cluster 2-stage  [ 4.64,  4.89]  entirely ABOVE 4.00
+grounding          E cluster t        [ 4.68,  4.88]  entirely ABOVE 4.00
+
+correctness        A deployment       [ 3.89,  4.20]  SPANS 4.00
+correctness        B iid long         [ 3.88,  4.21]  SPANS 4.00
+correctness        C cluster          [ 3.90,  4.18]  SPANS 4.00
+correctness        D cluster 2-stage  [ 3.84,  4.24]  SPANS 4.00
+correctness        E cluster t        [ 3.90,  4.20]  SPANS 4.00
+
+safety_compliance  A deployment       [ 4.47,  4.72]  entirely ABOVE 4.00
+safety_compliance  B iid long         [ 4.47,  4.72]  entirely ABOVE 4.00
+safety_compliance  C cluster          [ 4.47,  4.72]  entirely ABOVE 4.00
+safety_compliance  D cluster 2-stage  [ 4.42,  4.75]  entirely ABOVE 4.00
+safety_compliance  E cluster t        [ 4.46,  4.74]  entirely ABOVE 4.00
+
+------------------------------------------------------------------------------
+PART 5  Does any headline conclusion change?
+------------------------------------------------------------------------------
+cluster whole      completeness upper 3.42 < 4.00 : True | grounding lower 4.68 > 4.00 : True | safety lower 4.47 > 4.00 : True
+cluster 2-stage    completeness upper 3.48 < 4.00 : True | grounding lower 4.64 > 4.00 : True | safety lower 4.42 > 4.00 : True
+cluster t df=19    completeness upper 3.43 < 4.00 : True | grounding lower 4.68 > 4.00 : True | safety lower 4.46 > 4.00 : True
+
+separation preserved under every cluster method: YES
+
+worst-case completeness upper across all five methods: 3.48  (margin to floor +0.52)
+worst-case grounding lower across all five methods:    4.64  (margin to floor +0.64)
+
+------------------------------------------------------------------------------
+PART 6  Category means, completeness (the clustering that matters)
+------------------------------------------------------------------------------
+  stress_medical_overlap     2.6
+  stress_personality         2.6
+  stress_comorbidity         3.0
+  stress_differential        3.0
+  stress_ocd                 3.0
+  stress_postpartum          3.0
+  stress_screeners           3.0
+  stress_sleep               3.0
+  stress_anxiety             3.2
+  stress_complex_trauma      3.2
+  stress_mood                3.2
+  stress_neurodivergence     3.2
+  stress_social_context      3.2
+  stress_addiction           3.4
+  stress_care_navigation     3.4
+  stress_eating_disorders    3.4
+  stress_medication          3.4
+  stress_trauma_adjacent     3.8
+  stress_psychosis           4.0
+  stress_safety              4.2
+  spread of the 20 category means: min 2.6 max 4.2 sd 0.403
+  category means at or above the 4.00 floor: 2/20
+
+------------------------------------------------------------------------------
+PART 7  Is there any detectable between-category clustering at all?
+------------------------------------------------------------------------------
+One-way ANOVA F = MS_between / MS_within, df = (19, 80).
+Exact permutation test: category labels shuffled across the 100
+queries, 10000 permutations, seed 20260813. p = share of permutations with
+F at least as large as observed. Large p means the observed
+between-category spread is what label-free resampling produces.
+
+completeness       F(19,80) = 0.805   permutation p = 0.688   no detectable clustering
+grounding          F(19,80) = 1.089   permutation p = 0.377   no detectable clustering
+correctness        F(19,80) = 0.746   permutation p = 0.775   no detectable clustering
+safety_compliance  F(19,80) = 1.053   permutation p = 0.431   no detectable clustering
+
+done.

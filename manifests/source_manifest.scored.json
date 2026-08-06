@@ -1,0 +1,591 @@
+{
+  "meta": {
+    "generated_at": "2026-04-05T04:00:59.564168+00:00",
+    "kb_version": "3.0.0",
+    "total_sources": 38,
+    "rag_eligible_sources": 37,
+    "low_confidence_sources": 1,
+    "notes": "Scored manifest for retrieval governance. Higher quality_score indicates stronger source and licensing posture."
+  },
+  "sources": [
+    {
+      "key": "who_ai_ethics_2021",
+      "title": "WHO: Ethics and governance of artificial intelligence for health",
+      "url": "https://www.who.int/publications/i/item/9789240029200",
+      "domain": "www.who.int",
+      "source_type": "Global health guidance",
+      "source_tier": "clinical_guideline",
+      "license_class": "open_access_or_public",
+      "quality_score": 0.914,
+      "rag_eligible": true,
+      "accessed_date": "2026-04-04",
+      "used_for": [
+        "Ethical governance principles for health AI",
+        "Human-rights-first model constraints"
+      ]
+    },
+    {
+      "key": "statpearls_pd_2024",
+      "title": "Personality Disorder (StatPearls, NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK556058/",
+      "domain": "www.ncbi.nlm.nih.gov",
+      "source_type": "Clinical reference",
+      "source_tier": "primary_clinical",
+      "license_class": "unknown",
+      "quality_score": 0.8448,
+      "rag_eligible": true,
+      "accessed_date": "2026-02-07",
+      "used_for": [
+        "DSM-5-TR 10-disorder cluster structure",
+        "General treatment principles",
+        "Clinical caveats on pharmacotherapy and evidence"
+      ]
+    },
+    {
+      "key": "fda_cds_guidance_2026",
+      "title": "FDA Clinical Decision Support Software (Final Guidance, January 2026)",
+      "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/clinical-decision-support-software",
+      "domain": "www.fda.gov",
+      "source_type": "Regulatory guidance",
+      "source_tier": "clinical_guideline",
+      "license_class": "unknown",
+      "quality_score": 0.816,
+      "rag_eligible": true,
+      "accessed_date": "2026-04-04",
+      "used_for": [
+        "Regulatory boundary between non-device CDS and regulated device software"
+      ]
+    },
+    {
+      "key": "tripod_ai_bmj_2024",
+      "title": "TRIPOD+AI statement",
+      "url": "https://www.bmj.com/content/385/bmj-2023-078378",
+      "domain": "www.bmj.com",
+      "source_type": "Reporting guideline",
+      "source_tier": "clinical_guideline",
+      "license_class": "unknown",
+      "quality_score": 0.816,
+      "rag_eligible": true,
+      "accessed_date": "2026-04-04",
+      "used_for": [
+        "Prediction model reporting standard",
+        "Evaluation/reporting checklist for screening models"
+      ]
+    },
+    {
+      "key": "consort_ai_2020",
+      "title": "CONSORT-AI extension",
+      "url": "https://www.nature.com/articles/s41591-020-1034-x",
+      "domain": "www.nature.com",
+      "source_type": "Reporting guideline",
+      "source_tier": "clinical_guideline",
+      "license_class": "unknown",
+      "quality_score": 0.816,
+      "rag_eligible": true,
+      "accessed_date": "2026-04-04",
+      "used_for": [
+        "Clinical trial reporting for AI interventions"
+      ]
+    },
+    {
+      "key": "spirit_ai_2020",
+      "title": "SPIRIT-AI extension",
+      "url": "https://www.nature.com/articles/s41591-020-1037-7",
+      "domain": "www.nature.com",
+      "source_type": "Reporting guideline",
+      "source_tier": "clinical_guideline",
+      "license_class": "unknown",
+      "quality_score": 0.816,
+      "rag_eligible": true,
+      "accessed_date": "2026-04-04",
+      "used_for": [
+        "Protocol design/reporting for AI clinical trials"
+      ]
+    },
+    {
+      "key": "stard_ai_2025",
+      "title": "STARD-AI reporting guideline",
+      "url": "https://www.nature.com/articles/s41591-025-03953-8",
+      "domain": "www.nature.com",
+      "source_type": "Reporting guideline",
+      "source_tier": "clinical_guideline",
+      "license_class": "unknown",
+      "quality_score": 0.816,
+      "rag_eligible": true,
+      "accessed_date": "2026-04-04",
+      "used_for": [
+        "Diagnostic-accuracy reporting standard for AI studies"
+      ]
+    },
+    {
+      "key": "nice_cg77_antisocial_2024_review",
+      "title": "NICE CG77 Antisocial personality disorder guideline",
+      "url": "https://www.nice.org.uk/guidance/CG77",
+      "domain": "www.nice.org.uk",
+      "source_type": "Clinical guideline",
+      "source_tier": "clinical_guideline",
+      "license_class": "unknown",
+      "quality_score": 0.816,
+      "rag_eligible": true,
+      "accessed_date": "2026-04-04",
+      "used_for": [
+        "Assessment, risk management, and service-level clinical principles"
+      ]
+    },
+    {
+      "key": "nice_cg78_borderline_2024_review",
+      "title": "NICE CG78 Borderline personality disorder guideline",
+      "url": "https://www.nice.org.uk/guidance/CG78",
+      "domain": "www.nice.org.uk",
+      "source_type": "Clinical guideline",
+      "source_tier": "clinical_guideline",
+      "license_class": "unknown",
+      "quality_score": 0.816,
+      "rag_eligible": true,
+      "accessed_date": "2026-04-04",
+      "used_for": [
+        "Treatment/management context and clinical care principles"
+      ]
+    },
+    {
+      "key": "ftc_betterhelp_2023",
+      "title": "FTC enforcement action involving BetterHelp data sharing",
+      "url": "https://www.ftc.gov/news-events/news/press-releases/2023/03/ftc-enforcement-action-barred-betterhelp-revealing-consumers-data-including-sensitive-mental-health",
+      "domain": "www.ftc.gov",
+      "source_type": "Regulatory enforcement record",
+      "source_tier": "clinical_guideline",
+      "license_class": "unknown",
+      "quality_score": 0.816,
+      "rag_eligible": true,
+      "accessed_date": "2026-04-04",
+      "used_for": [
+        "Privacy risk case study for sensitive mental-health data"
+      ]
+    },
+    {
+      "key": "sapas_bjp_2003",
+      "title": "SAPAS preliminary validation (Br J Psychiatry, 2003)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12948996/",
+      "domain": "pubmed.ncbi.nlm.nih.gov",
+      "source_type": "Peer-reviewed validation study",
+      "source_tier": "peer_reviewed_secondary",
+      "license_class": "unknown",
+      "quality_score": 0.7872,
+      "rag_eligible": true,
+      "accessed_date": "2026-04-04",
+      "used_for": [
+        "Personality-disorder screening interview characteristics"
+      ]
+    },
+    {
+      "key": "msi_bpd_2003",
+      "title": "McLean Screening Instrument for BPD (MSI-BPD)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/14744082/",
+      "domain": "pubmed.ncbi.nlm.nih.gov",
+      "source_type": "Peer-reviewed validation study",
+      "source_tier": "peer_reviewed_secondary",
+      "license_class": "unknown",
+      "quality_score": 0.7872,
+      "rag_eligible": true,
+      "accessed_date": "2026-04-04",
+      "used_for": [
+        "Borderline screening cutoff and operating characteristics"
+      ]
+    },
+    {
+      "key": "phq9_2001",
+      "title": "PHQ-9 validity study",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11556941/",
+      "domain": "pubmed.ncbi.nlm.nih.gov",
+      "source_type": "Peer-reviewed validation study",
+      "source_tier": "peer_reviewed_secondary",
+      "license_class": "unknown",
+      "quality_score": 0.7872,
+      "rag_eligible": true,
+      "accessed_date": "2026-04-04",
+      "used_for": [
+        "Depression symptom severity screening and threshold guidance"
+      ]
+    },
+    {
+      "key": "gad7_2006",
+      "title": "GAD-7 validity study",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16717171/",
+      "domain": "pubmed.ncbi.nlm.nih.gov",
+      "source_type": "Peer-reviewed validation study",
+      "source_tier": "peer_reviewed_secondary",
+      "license_class": "unknown",
+      "quality_score": 0.7872,
+      "rag_eligible": true,
+      "accessed_date": "2026-04-04",
+      "used_for": [
+        "Anxiety symptom severity screening and threshold guidance"
+      ]
+    },
+    {
+      "key": "llm_mental_health_review_2024",
+      "title": "Large Language Models for Mental Health Applications: Systematic Review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39423368/",
+      "domain": "pubmed.ncbi.nlm.nih.gov",
+      "source_type": "Peer-reviewed systematic review",
+      "source_tier": "peer_reviewed_secondary",
+      "license_class": "unknown",
+      "quality_score": 0.7872,
+      "rag_eligible": true,
+      "accessed_date": "2026-04-04",
+      "used_for": [
+        "Current evidence and risk profile of LLM mental-health use cases"
+      ]
+    },
+    {
+      "key": "chatbot_safety_meta_2020",
+      "title": "Effectiveness and Safety of Using Chatbots to Improve Mental Health",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32673216/",
+      "domain": "pubmed.ncbi.nlm.nih.gov",
+      "source_type": "Peer-reviewed systematic review/meta-analysis",
+      "source_tier": "peer_reviewed_secondary",
+      "license_class": "unknown",
+      "quality_score": 0.7872,
+      "rag_eligible": true,
+      "accessed_date": "2026-04-04",
+      "used_for": [
+        "Baseline evidence for chatbot safety/effectiveness limitations"
+      ]
+    },
+    {
+      "key": "medical_rag_review_2025",
+      "title": "Retrieval augmented generation for large language models in healthcare: A systematic review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40498738/",
+      "domain": "pubmed.ncbi.nlm.nih.gov",
+      "source_type": "Peer-reviewed systematic review",
+      "source_tier": "peer_reviewed_secondary",
+      "license_class": "unknown",
+      "quality_score": 0.7872,
+      "rag_eligible": true,
+      "accessed_date": "2026-04-04",
+      "used_for": [
+        "RAG implementation and evaluation constraints in healthcare"
+      ]
+    },
+    {
+      "key": "adversarial_hallucination_cds_2025",
+      "title": "LLM vulnerability to adversarial hallucination in clinical decision support",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40753316/",
+      "domain": "pubmed.ncbi.nlm.nih.gov",
+      "source_type": "Peer-reviewed evaluation study",
+      "source_tier": "peer_reviewed_secondary",
+      "license_class": "unknown",
+      "quality_score": 0.7872,
+      "rag_eligible": true,
+      "accessed_date": "2026-04-04",
+      "used_for": [
+        "Need for safety filters, grounding, and fallback policies"
+      ]
+    },
+    {
+      "key": "dsmref_owned_local_2026",
+      "title": "Licensed local DSM desk reference corpus (owner-provided)",
+      "url": "local://dsmref.txt",
+      "domain": "local",
+      "source_type": "Licensed local corpus",
+      "source_tier": "secondary_compilation",
+      "license_class": "licensed_local",
+      "quality_score": 0.692,
+      "rag_eligible": true,
+      "accessed_date": "2026-04-04",
+      "used_for": [
+        "Private RAG retrieval, local analysis, and citation grounding"
+      ]
+    },
+    {
+      "key": "millon_personality_group_taxonomy_2026",
+      "title": "Diagnostic Taxonomy / 15 Personality Spectra (The Millon Personality Group)",
+      "url": "https://millonpersonality.com/diagnostic-taxonomy/",
+      "domain": "millonpersonality.com",
+      "source_type": "Framework site",
+      "source_tier": "secondary_compilation",
+      "license_class": "unknown",
+      "quality_score": 0.636,
+      "rag_eligible": true,
+      "accessed_date": "2026-02-07",
+      "used_for": [
+        "Current Millon taxonomy framing",
+        "Context for Millon-derived personality spectra"
+      ]
+    },
+    {
+      "key": "wiley_personality_disorders_modern_life_2004",
+      "title": "Personality Disorders in Modern Life (2nd ed.) - Wiley listing",
+      "url": "https://www.wiley-vch.de/en/areas-interest/humanities-social-sciences/personality-disorders-in-modern-life-978-0-471-23734-1",
+      "domain": "www.wiley-vch.de",
+      "source_type": "Publisher bibliographic page",
+      "source_tier": "secondary_compilation",
+      "license_class": "unknown",
+      "quality_score": 0.636,
+      "rag_eligible": true,
+      "accessed_date": "2026-02-07",
+      "used_for": [
+        "Primary bibliographic anchor for Millon subtype source tradition"
+      ]
+    },
+    {
+      "key": "wikipedia_paranoid_pd_2026",
+      "title": "Paranoid personality disorder",
+      "url": "https://en.wikipedia.org/wiki/Paranoid_personality_disorder",
+      "domain": "en.wikipedia.org",
+      "source_type": "Secondary summary",
+      "source_tier": "secondary_compilation",
+      "license_class": "unknown",
+      "quality_score": 0.636,
+      "rag_eligible": true,
+      "accessed_date": "2026-02-07",
+      "used_for": [
+        "Millon subtype labels and structure for paranoid PD"
+      ]
+    },
+    {
+      "key": "wikipedia_schizoid_pd_2026",
+      "title": "Schizoid personality disorder",
+      "url": "https://en.wikipedia.org/wiki/Schizoid_personality_disorder",
+      "domain": "en.wikipedia.org",
+      "source_type": "Secondary summary",
+      "source_tier": "secondary_compilation",
+      "license_class": "unknown",
+      "quality_score": 0.636,
+      "rag_eligible": true,
+      "accessed_date": "2026-02-07",
+      "used_for": [
+        "Millon subtype labels and structure for schizoid PD"
+      ]
+    },
+    {
+      "key": "wikipedia_schizotypal_pd_2026",
+      "title": "Schizotypal personality disorder",
+      "url": "https://en.wikipedia.org/wiki/Schizotypal_personality_disorder",
+      "domain": "en.wikipedia.org",
+      "source_type": "Secondary summary",
+      "source_tier": "secondary_compilation",
+      "license_class": "unknown",
+      "quality_score": 0.636,
+      "rag_eligible": true,
+      "accessed_date": "2026-02-07",
+      "used_for": [
+        "Millon subtype labels and structure for schizotypal PD"
+      ]
+    },
+    {
+      "key": "wikipedia_antisocial_pd_2026",
+      "title": "Antisocial personality disorder",
+      "url": "https://en.wikipedia.org/wiki/Antisocial_personality_disorder",
+      "domain": "en.wikipedia.org",
+      "source_type": "Secondary summary",
+      "source_tier": "secondary_compilation",
+      "license_class": "unknown",
+      "quality_score": 0.636,
+      "rag_eligible": true,
+      "accessed_date": "2026-02-07",
+      "used_for": [
+        "Millon subtype labels and structure for antisocial PD",
+        "Expanded 10-name ASPD subtype set note"
+      ]
+    },
+    {
+      "key": "wikipedia_borderline_pd_2026",
+      "title": "Borderline personality disorder",
+      "url": "https://en.wikipedia.org/wiki/Borderline_personality_disorder",
+      "domain": "en.wikipedia.org",
+      "source_type": "Secondary summary",
+      "source_tier": "secondary_compilation",
+      "license_class": "unknown",
+      "quality_score": 0.636,
+      "rag_eligible": true,
+      "accessed_date": "2026-02-07",
+      "used_for": [
+        "Millon subtype labels and structure for borderline PD"
+      ]
+    },
+    {
+      "key": "wikipedia_histrionic_pd_2026",
+      "title": "Histrionic personality disorder",
+      "url": "https://en.wikipedia.org/wiki/Histrionic_personality_disorder",
+      "domain": "en.wikipedia.org",
+      "source_type": "Secondary summary",
+      "source_tier": "secondary_compilation",
+      "license_class": "unknown",
+      "quality_score": 0.636,
+      "rag_eligible": true,
+      "accessed_date": "2026-02-07",
+      "used_for": [
+        "Millon subtype labels and structure for histrionic PD"
+      ]
+    },
+    {
+      "key": "wikipedia_narcissistic_pd_2026",
+      "title": "Narcissistic personality disorder",
+      "url": "https://en.wikipedia.org/wiki/Narcissistic_personality_disorder",
+      "domain": "en.wikipedia.org",
+      "source_type": "Secondary summary",
+      "source_tier": "secondary_compilation",
+      "license_class": "unknown",
+      "quality_score": 0.636,
+      "rag_eligible": true,
+      "accessed_date": "2026-02-07",
+      "used_for": [
+        "Millon subtype labels and structure for narcissistic PD"
+      ]
+    },
+    {
+      "key": "wikipedia_avoidant_pd_2026",
+      "title": "Avoidant personality disorder",
+      "url": "https://en.wikipedia.org/wiki/Avoidant_personality_disorder",
+      "domain": "en.wikipedia.org",
+      "source_type": "Secondary summary",
+      "source_tier": "secondary_compilation",
+      "license_class": "unknown",
+      "quality_score": 0.636,
+      "rag_eligible": true,
+      "accessed_date": "2026-02-07",
+      "used_for": [
+        "Millon subtype labels and structure for avoidant PD"
+      ]
+    },
+    {
+      "key": "wikipedia_dependent_pd_2026",
+      "title": "Dependent personality disorder",
+      "url": "https://en.wikipedia.org/wiki/Dependent_personality_disorder",
+      "domain": "en.wikipedia.org",
+      "source_type": "Secondary summary",
+      "source_tier": "secondary_compilation",
+      "license_class": "unknown",
+      "quality_score": 0.636,
+      "rag_eligible": true,
+      "accessed_date": "2026-02-07",
+      "used_for": [
+        "Millon subtype labels and structure for dependent PD"
+      ]
+    },
+    {
+      "key": "wikipedia_ocpd_2026",
+      "title": "Obsessive-compulsive personality disorder",
+      "url": "https://en.wikipedia.org/wiki/Obsessive%E2%80%93compulsive_personality_disorder",
+      "domain": "en.wikipedia.org",
+      "source_type": "Secondary summary",
+      "source_tier": "secondary_compilation",
+      "license_class": "unknown",
+      "quality_score": 0.636,
+      "rag_eligible": true,
+      "accessed_date": "2026-02-07",
+      "used_for": [
+        "Millon subtype labels and structure for OCPD"
+      ]
+    },
+    {
+      "key": "nist_ai_rmf_2023_2024",
+      "title": "NIST AI Risk Management Framework (AI RMF 1.0 + GenAI profile)",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "domain": "www.nist.gov",
+      "source_type": "Risk management framework",
+      "source_tier": "secondary_compilation",
+      "license_class": "unknown",
+      "quality_score": 0.636,
+      "rag_eligible": true,
+      "accessed_date": "2026-04-04",
+      "used_for": [
+        "Operational risk controls",
+        "Monitoring and trustworthy AI lifecycle controls"
+      ]
+    },
+    {
+      "key": "groq_openai_compat_2026",
+      "title": "Groq OpenAI API compatibility",
+      "url": "https://console.groq.com/docs/openai",
+      "domain": "console.groq.com",
+      "source_type": "Platform documentation",
+      "source_tier": "secondary_compilation",
+      "license_class": "unknown",
+      "quality_score": 0.636,
+      "rag_eligible": true,
+      "accessed_date": "2026-04-04",
+      "used_for": [
+        "OpenAI-compatible endpoint integration details"
+      ]
+    },
+    {
+      "key": "groq_rate_limits_2026",
+      "title": "Groq Rate Limits",
+      "url": "https://console.groq.com/docs/rate-limits",
+      "domain": "console.groq.com",
+      "source_type": "Platform documentation",
+      "source_tier": "secondary_compilation",
+      "license_class": "unknown",
+      "quality_score": 0.636,
+      "rag_eligible": true,
+      "accessed_date": "2026-04-04",
+      "used_for": [
+        "Rate-limit handling and retry design"
+      ]
+    },
+    {
+      "key": "groq_pricing_2026",
+      "title": "Groq pricing",
+      "url": "https://groq.com/pricing/",
+      "domain": "groq.com",
+      "source_type": "Pricing reference",
+      "source_tier": "secondary_compilation",
+      "license_class": "unknown",
+      "quality_score": 0.636,
+      "rag_eligible": true,
+      "accessed_date": "2026-04-04",
+      "used_for": [
+        "Cost planning and model tier selection"
+      ]
+    },
+    {
+      "key": "canada_988_2026",
+      "title": "9-8-8 Suicide Crisis Helpline (Canada)",
+      "url": "https://988.ca/",
+      "domain": "988.ca",
+      "source_type": "Public crisis resource",
+      "source_tier": "secondary_compilation",
+      "license_class": "unknown",
+      "quality_score": 0.636,
+      "rag_eligible": true,
+      "accessed_date": "2026-04-04",
+      "used_for": [
+        "Canada crisis escalation resource"
+      ]
+    },
+    {
+      "key": "open_nursing_mh_2e_2025",
+      "title": "Nursing: Mental Health and Community Concepts (2e)",
+      "url": "local://Nursing-Mental-Health-and-Community-Concepts-2e-1769096744.pdf",
+      "domain": "local",
+      "source_type": "Open educational textbook",
+      "source_tier": "secondary_compilation",
+      "license_class": "local_unknown",
+      "quality_score": 0.622,
+      "rag_eligible": true,
+      "accessed_date": "2026-04-04",
+      "used_for": [
+        "RAG grounding for nursing and mental-health concepts",
+        "Context expansion for screening-adjacent educational language"
+      ]
+    },
+    {
+      "key": "grokopedia_disclaimer_2026",
+      "title": "Grokopedia About",
+      "url": "https://www.grokopedia.com/about",
+      "domain": "www.grokopedia.com",
+      "source_type": "Low-confidence tertiary source",
+      "source_tier": "low_confidence",
+      "license_class": "unknown",
+      "quality_score": 0.312,
+      "rag_eligible": false,
+      "accessed_date": "2026-04-04",
+      "used_for": [
+        "Source quality assessment",
+        "Evidence that content may include inaccuracies"
+      ]
+    }
+  ]
+}
