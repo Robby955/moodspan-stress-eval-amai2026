@@ -1,8 +1,6 @@
 # Reproducibility archive: pre-deployment stress testing of a source-grounded mental-health assistant
 
-This archive supports one paper:
-
-> Robert Sneiderman. *Pre-Deployment Stress Testing of Source-Grounded
+> R Sneiderman. *Pre-Deployment Stress Testing of Source-Grounded
 > Conversational AI in Non-Imaging Mental-Health Contexts: A 100-Query,
 > 20-Risk-Category Methodology with Grounded-Refusal Contracts.*
 > Fifth Workshop on Applications of Medical AI (AMAI 2026), a MICCAI 2026
@@ -14,9 +12,7 @@ Section 3.4 of the paper describes this archive; the contents below are what
 that description promises.
 
 The evaluated system is Kira, the retrieval-grounded assistant inside MoodSpan,
-a consumer mental-health web application built and operated by the author. The
-paper is a self-evaluation and reports the system failing the completeness floor
-its own contract declares.
+a consumer mental-health web application built and operated by the author.
 
 ## What is in here
 
@@ -165,8 +161,6 @@ read from the artefact rather than recomputed. No computation changed.
   `data/judge_scores.json` under `config`.
 
 ## What is excluded, and why
-
-Two things are deliberately absent, in the paper's own words.
 
 **The retrieval corpus.** The corpus manifest records it as retrieval-only,
 excluded from public indexing, and not clinician reviewed
