@@ -1,4 +1,4 @@
-# Reproducibility archive: pre-deployment stress testing of a source-grounded mental-health assistant
+# Pre-deployment stress testing of a source-grounded mental-health assistant
 
 > R Sneiderman. *Pre-Deployment Stress Testing of Source-Grounded
 > Conversational AI in Non-Imaging Mental-Health Contexts: A 100-Query,
