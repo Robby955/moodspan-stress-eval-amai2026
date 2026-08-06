@@ -62,3 +62,10 @@ by one judge instance which is also the generating model, on a split that was
 used during development of the component under test. They are a pre-deployment
 contract check on that system. Do not cite them as a benchmark result, as a
 model-quality comparison, or as evidence of clinical efficacy.
+
+## DOI
+
+This archive is deposited on Zenodo: https://doi.org/10.5281/zenodo.21830212
+
+The concept DOI resolves to the newest version; cite the version DOI above for the state
+that produced the numbers in the paper.
